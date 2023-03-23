@@ -1,1 +1,1 @@
-# Streams: TransformationsWithFlatMap.java
+# Streams: StatisticsWithStreams.java
