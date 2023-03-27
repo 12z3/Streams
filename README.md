@@ -1,1 +1,1 @@
-# Streams: Sorting.java
+# Streams: MinMax.java
