@@ -25,6 +25,7 @@ public class streams {
 
         Predicate<Integer> pdc2 = integer -> integer % 3 == 0;
 
+        // Забележи, ча типа на "integers" съвпада с типа на "toList() -> List<Integer>", който е затварящ потока;
         List<Integer> l1 = Arrays.asList(33, 1, 2, 4, 5, 6, 7, 8, 9);
         List<Integer> integers = l1.stream()
                 .filter(pdc)
@@ -32,9 +33,9 @@ public class streams {
         System.out.println(integers);
 
         List<Double> integers1 = l1.stream()
-                .filter(pdc2)
-                .map(el -> Double.parseDouble(String.valueOf(el)))
-                .toList();
+                .filter(pdc2) // създава нов поток върху който прилага предиката на филтъра
+                .map(el -> Double.parseDouble(String.valueOf(el))) // създава нов поток от стария
+                .toList(); // затваря потока като крайния резултат е от тип List<Double>
         System.out.println(integers1);
     }
 
